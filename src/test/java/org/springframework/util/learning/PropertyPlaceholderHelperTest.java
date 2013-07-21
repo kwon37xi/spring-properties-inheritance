@@ -9,7 +9,7 @@ import org.springframework.util.PropertyPlaceholderHelper;
 import java.util.Properties;
 
 /**
- * Author: KwonNam Son(kwon37xi@gmail.com}
+ * Author: KwonNam Son(kwon37xi@gmail.com)
  */
 public class PropertyPlaceholderHelperTest {
     private PropertyPlaceholderHelper helper;
