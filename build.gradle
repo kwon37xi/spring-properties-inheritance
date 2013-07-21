@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+ext {
+    javaVersion = '1.6'
+    springframeworkVersion = '3.0.0.RELEASE'
+}
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-core:${springframeworkVersion}"
+    compile "org.springframework:spring-context:${springframeworkVersion}"
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+tasks.idea.dependsOn cleanIdea
