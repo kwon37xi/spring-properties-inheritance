@@ -2,6 +2,8 @@
 *.ipr
 *.iml
 *.iws
+.gradle/
+.idea/
 
 # Package Files #
 *.jar
