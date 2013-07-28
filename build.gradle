@@ -3,7 +3,7 @@ apply plugin: 'java'
 ext {
     javaVersion = '1.6'
     sourceEncoding = 'UTF-8'
-    springframeworkVersion = '3.0.0.RELEASE'
+    springframeworkVersion = '3.2.3.RELEASE'
 }
 
 sourceCompatibility = javaVersion
@@ -19,5 +19,7 @@ repositories {
 dependencies {
     compile "org.springframework:spring-core:${springframeworkVersion}"
     compile "org.springframework:spring-context:${springframeworkVersion}"
+
     testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile "org.springframework:spring-test:${springframeworkVersion}"
 }
