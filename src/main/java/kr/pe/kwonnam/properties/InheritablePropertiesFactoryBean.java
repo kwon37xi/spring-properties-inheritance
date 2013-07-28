@@ -4,6 +4,8 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.util.Assert;
+import org.springframework.util.PropertyPlaceholderHelper;
 
 import java.util.Properties;
 
@@ -30,12 +32,13 @@ public class InheritablePropertiesFactoryBean implements FactoryBean<Properties>
      * .properties or *.xml file location.
      */
     private String location;
+
     /**
      * Spring ResourceLoader
      */
     private ResourceLoader resourceLoader = new DefaultResourceLoader();
     private String placeholderPrefix = DEFAULT_PLACEHOLDER_PREFIX;
-    private String placeholderSuffix = DEFAULT_PLACEHOLDER_PREFIX;
+    private String placeholderSuffix = DEFAULT_PACEHOLDER_SUFFIX;
     private String valueSeparator = DEFAULT_VALUE_SEPARATOR;
 
     /**
@@ -84,4 +87,24 @@ public class InheritablePropertiesFactoryBean implements FactoryBean<Properties>
         this.resourceLoader = resourceLoader;
     }
 
+    /**
+     * Author: KwonNam Son(kwon37xi@gmail.com)
+     */
+    public static class ParentAndSystemPropertiesPlaceholderResolver implements PropertyPlaceholderHelper.PlaceholderResolver {
+        private Properties parentProperties;
+
+        public ParentAndSystemPropertiesPlaceholderResolver(Properties parentProperties) {
+            Assert.notNull(parentProperties, "parentProperties must not be null.");
+            this.parentProperties = parentProperties;
+        }
+
+        @Override
+        public String resolvePlaceholder(String placeholderName) {
+            String value = parentProperties.getProperty(placeholderName);
+            if (value == null) {
+                value = System.getProperty(placeholderName);
+            }
+            return value;
+        }
+    }
 }
