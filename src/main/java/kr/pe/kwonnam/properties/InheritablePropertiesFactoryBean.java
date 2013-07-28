@@ -169,9 +169,6 @@ public class InheritablePropertiesFactoryBean implements FactoryBean<Properties>
         return false;
     }
 
-    /**
-     * Author: KwonNam Son(kwon37xi@gmail.com)
-     */
     public static class ParentAndSystemPropertiesPlaceholderResolver implements PropertyPlaceholderHelper.PlaceholderResolver {
         private Properties parentProperties;
 
