@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>child-properties</comment>
+    <entry key="__extends__">classpath:/kr/pe/kwonnam/properties/child-properties.xml</entry>
+
+    <entry key="test.override.triple">overridden by grand child</entry>
+
+    <entry key="test.placeholder.parent">${test.placeholder.parent}/grand child value</entry>
+    <entry key="test.placeholder.grand_parent">${test.placeholder.grand_parent}/grandchild</entry>
+    <entry key="test.placeholder.member.info">${member.id}-${member.name}-${member.email}-${project.name}</entry>
+    <entry key="test.placeholder.parent.system">${java.io.tmpdir}/${member.id}</entry>
+    <entry key="test.placeholder.parent.override.system">${user.language}!!</entry>
+</properties>
+

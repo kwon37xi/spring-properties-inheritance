@@ -43,6 +43,12 @@ public class PropertyPlaceholderHelperTest {
     }
 
     @Test
+    public void placeholderValues_no_placeholder() {
+        givenHelper(false);
+        assertThat(resolve("valueWhichDoesNotExists"), is("valueWhichDoesNotExists"));
+    }
+
+    @Test
     public void placeholderValues_default() {
         givenHelper(false);
         assertThat(resolve("${user.my.home:/home/user}/test"), is("/home/user/test"));
