@@ -4,6 +4,7 @@
 *.iws
 .gradle/
 .idea/
+build/
 
 # Package Files #
 *.jar
