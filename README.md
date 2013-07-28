@@ -24,17 +24,19 @@ automatically.
 
 1. Copy [InheritablePropertiesFactoryBean.java](https://github.com/kwon37xi/spring-properties-inheritance/blob/master/src/main/java/kr/pe/kwonnam/properties/InheritablePropertiesFactoryBean.java)
 into your project source directory.
-1. Create bean.
+1. Create Spring bean.
+1. I prefer using properties with SpEL like #{configurationProperties['some.key']}.
+1. You can change extendKey ,placeholder prefix/suffix, etc. refer to the source.
+
+## Example
+
+### bean configuration
 ```xml
 <bean id="configurationProperties" class="kr.pe.kwonnam.properties.InheritablePropertiesFactoryBean">
     <property name="location" value="classpath:/child-properties.xml" />
     <property name="extendKey" value="__extends__" /> <!-- actually you don't need this line. It's just an example' -->
 </bean>
 ```
-1. I prefer using properties with SpEL like #{configurationProperties['some.key']}.
-1. You can change extendKey ,placeholder prefix/suffix, etc. refer to the source.
-
-## properties examples
 
 ### parent-properties.xml
 ```xml
