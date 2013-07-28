@@ -5,6 +5,7 @@
 .gradle/
 .idea/
 build/
+out/
 
 # Package Files #
 *.jar
