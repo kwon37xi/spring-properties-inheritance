@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <comment>child-properties</comment>
     <entry key="__extends__">classpath:/kr/pe/kwonnam/properties/child-properties.xml</entry>
 
     <entry key="test.override.triple">overridden by grand child</entry>

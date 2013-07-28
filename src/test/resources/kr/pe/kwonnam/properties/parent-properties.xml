@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <comment>parent-properties</comment>
     <entry key="project.name">Spring Properties Inheritance</entry>
     <entry key="project.home">${java.io.tmpdir}/project</entry>
     <entry key="test.override">not overridden</entry>

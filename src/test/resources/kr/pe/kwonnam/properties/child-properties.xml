@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <comment>child-properties</comment>
     <entry key="__extends__">classpath:/kr/pe/kwonnam/properties/parent-properties.xml</entry>
     <entry key="member.id">kwon37xi</entry>
     <entry key="member.name">KwonNam Son</entry>
